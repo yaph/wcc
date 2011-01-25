@@ -4,10 +4,15 @@ class RSS {
   public function __construct(){}
 
   public function getParsedResponse($xml) {
+    libxml_use_internal_errors(true);
     $sxml = simplexml_load_string($xml);
-//    $this->getChannel($sxml);
-    $this->getItems($sxml);
-    return $this->response_data;
+    $errors = libxml_get_errors();
+    if (empty($errors)) {
+      $this->getItems($sxml);
+      //$this->getChannel($sxml);
+      return $this->response_data;
+    }
+    return false;
   }
 
   private function getChannel($sxml) {
