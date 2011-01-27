@@ -33,8 +33,24 @@ class SPARQL {
         $name = $this->getAttrVal($b->attributes(), 'name');
         $result_data[$name] = $val;
       }
+      $this->setId($result_data);
       $this->response_data['results'][] = $result_data;
     }
+  }
+
+  /**
+   * Set id key on data if possible
+   * @param array $data Passed by reference
+   * @return void
+   */
+  private function setId(&$data) {
+    $from_key = false;
+    if (isset($data['s']))
+      $from_key = $data['s'];
+    elseif (isset($data['page']))
+      $from_key = $data['page'];
+    if ($from_key)
+      $data['id'] = substr($from_key, strrpos($from_key, '/') + 1);
   }
 
   private function getAttrVal($attr, $name) {
