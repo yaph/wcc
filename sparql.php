@@ -4,9 +4,11 @@ class SPARQL {
   public function __construct(){}
 
   public function getParsedResponse($xml) {
-    $sxml = simplexml_load_string($xml);
-    $this->getHeadVariables($sxml);
-    $this->getResults($sxml);
+    unset($this->response_data);
+    if ($sxml = simplexml_load_string($xml)) {
+      $this->getHeadVariables($sxml);
+      $this->getResults($sxml);
+    }
     return $this->response_data;
   }
 
