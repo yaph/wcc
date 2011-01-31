@@ -6,7 +6,7 @@ class SPARQL extends WCC {
   public function __construct(){}
 
   public function getParsedResponse($xml) {
-    unset($this->response_data);
+    $this->response_data = array();
     if ($sxml = simplexml_load_string($xml)) {
       $this->getHeadVariables($sxml);
       $this->getResults($sxml);
