@@ -1,5 +1,5 @@
 <?php
-class RSS {
+class RSS extends WCC {
   private $response_data;
   public function __construct(){}
 
@@ -9,17 +9,9 @@ class RSS {
     $errors = libxml_get_errors();
     if (empty($errors)) {
       $this->getItems($sxml);
-      //$this->getChannel($sxml);
       return $this->response_data;
     }
     return false;
-  }
-
-  private function getChannel($sxml) {
-    $channel = $sxml->channel;
-//    foreach ($channel as $k => $v) {
-//      $this->response_data['channel'][$k] = $v;
-//    }
   }
 
   private function getItems($sxml) {

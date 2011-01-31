@@ -1,6 +1,8 @@
 <?php
-class SPARQL {
+class SPARQL extends WCC {
+
   private $response_data;
+
   public function __construct(){}
 
   public function getParsedResponse($xml) {
@@ -51,14 +53,5 @@ class SPARQL {
       $from_key = $data['page'];
     if ($from_key)
       $data['id'] = substr($from_key, strrpos($from_key, '/') + 1);
-  }
-
-  private function getAttrVal($attr, $name) {
-    foreach ($attr as $k => $v) {
-      if ($name == $k) {
-        return (string) $v;
-      }
-    }
-    return false;
   }
 }
