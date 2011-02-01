@@ -1,4 +1,5 @@
 <?php
+require dirname(__FILE__) . '/autoload.php';
 /**
  * A web client class with built-in caching.
  */
