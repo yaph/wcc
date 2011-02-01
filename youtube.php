@@ -19,42 +19,62 @@ class YouTube extends WCC {
   private function getItems($sxml) {
     $items = $sxml->entry;
     foreach ($items as $i) {
-      $item = array();
-      foreach ($i as $k => $v) {
-        switch($k) {
-          case 'id':
-            // example id "tag:youtube.com,2008:video:5HU5_LptFl0"
-            $parts = explode(':', $v);
-            $item[$k] = end($parts);
-            break;
-          case 'author':
-            $item[$k] = array(
-              'name' => (string) $v->name,
-              'uri' => (string) $v->uri
-            );
-            break;
-          case 'link':
-            $item[$k][] = array(
-              'rel' => $this->getAttrVal($v->attributes(), 'rel'),
-              'href' => $this->getAttrVal($v->attributes(), 'href')
-            );
-            break;
-          case 'content':
-            $item[$k] = $this->getAttrVal($v->attributes(), 'src');
-            break;
-          case 'category':
-            $item[$k][] = array(
-              'scheme' => $this->getAttrVal($v->attributes(), 'scheme'),
-              'term' => $this->getAttrVal($v->attributes(), 'term')
-            );
-            break;
-          default:
-            if (!is_string($v))
-              $v = (string) $v;
-            $item[$k] = $v;
-        }
+      $item = $this->getItemData($i);
+      $media = $i->children('http://search.yahoo.com/mrss/');
+      foreach ($media->group->thumbnail as $t) {
+        $this->setItemThumbnail($item, 'thumbnail', $t);
       }
       $this->response_data['items'][] = $item;
     }
+  }
+
+  private function getItemData($i) {
+    $item = array();
+    foreach ($i as $k => $v) {
+      $method = 'setItem' . ucfirst($k);
+      if (method_exists($this, $method)) {
+        $this->$method($item, $k, $v);
+      } else {
+        if (!is_string($v)) $v = (string) $v;
+        $item[$k] = $v;
+      }
+    }
+    return $item;
+  }
+
+  private function setItemId(&$item, $k, $v) {
+    // example id "tag:youtube.com,2008:video:5HU5_LptFl0"
+    $parts = explode(':', $v);
+    $item[$k] = end($parts);
+  }
+
+  private function setItemAuthor(&$item, $k, $v) {
+    $item[$k] = array('name' => (string) $v->name,'uri' => (string) $v->uri);
+  }
+
+  private function setItemLink(&$item, $k, $v) {
+    $item[$k][] = array(
+      'rel' => $this->getAttrVal($v->attributes(), 'rel'),
+      'href' => $this->getAttrVal($v->attributes(), 'href')
+    );
+  }
+
+  private function setItemContent(&$item, $k, $v) {
+    $item[$k] = $this->getAttrVal($v->attributes(), 'src');
+  }
+
+  private function setItemCategory(&$item, $k, $v) {
+    $item[$k][] = array(
+      'scheme' => $this->getAttrVal($v->attributes(), 'scheme'),
+      'term' => $this->getAttrVal($v->attributes(), 'term')
+    );
+  }
+
+  private function setItemThumbnail(&$item, $k, $v) {
+    $item[$k][] = array(
+      'url' => $this->getAttrVal($v->attributes(), 'url'),
+      'height' => $this->getAttrVal($v->attributes(), 'height'),
+      'width' => $this->getAttrVal($v->attributes(), 'width')
+    );
   }
 }
