@@ -93,6 +93,15 @@ class WCC {
   }
 
   /**
+   * Returns HTTP status code returned after Web request
+   * @param void
+   * @return int $status
+   */
+  public function getHTTPStatus() {
+    return $this->http->getStatus();
+  }
+
+  /**
    * Returns full URL to request, params are added when set
    * @param string $url Full URL or base URL when params is set to add a query string
    * @param array $params Associative array of URL parameters and values
@@ -104,15 +113,6 @@ class WCC {
       $url .= '?' . http_build_query($params, '', '&');
     }
     return $url;
-  }
-
-  /**
-   * Returns HTTP status code returned after Web request
-   * @param void
-   * @return int $status
-   */
-  public function getHTTPStatus() {
-    return $this->http->getStatus();
   }
 }
 
