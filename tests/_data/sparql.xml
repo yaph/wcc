@@ -1,0 +1,417 @@
+<sparql xmlns="http://www.w3.org/2005/sparql-results#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/sw/DataAccess/rf1/result2.xsd">
+ <head>
+  <variable name="player"/>
+  <variable name="page"/>
+  <variable name="label"/>
+  <variable name="birthDate"/>
+  <variable name="pcupdate"/>
+ </head>
+ <results distinct="false" ordered="true">
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Iker_Casillas</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Iker_Casillas</uri></binding>
+   <binding name="label"><literal xml:lang="es">Iker Casillas</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1981-05-20</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-10-03</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Pepe_%28footballer_born_1983%29</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Pepe_%28footballer_born_1983%29</uri></binding>
+   <binding name="label"><literal xml:lang="es">Képler Laveran Lima Ferreira</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1983-02-26</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-10-03</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/%C3%81ngel_di_Mar%C3%ADa</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/%C3%81ngel_di_Mar%C3%ADa</uri></binding>
+   <binding name="label"><literal xml:lang="es">Ángel Di María</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1988-02-14</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-10-03</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Esteban_Granero</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Esteban_Granero</uri></binding>
+   <binding name="label"><literal xml:lang="es">Esteban Granero</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1987-07-02</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-10-03</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Sergio_Ramos</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Sergio_Ramos</uri></binding>
+   <binding name="label"><literal xml:lang="es">Sergio Ramos</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1986-03-30</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-10-03</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Marcelo_Vieira</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Marcelo_Vieira</uri></binding>
+   <binding name="label"><literal xml:lang="es">Marcelo Vieira</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1988-05-12</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-10-03</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Xabi_Alonso</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Xabi_Alonso</uri></binding>
+   <binding name="label"><literal xml:lang="es">Xabi Alonso</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1981-11-25</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-09-25</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/%C3%81lvaro_Arbeloa</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/%C3%81lvaro_Arbeloa</uri></binding>
+   <binding name="label"><literal xml:lang="es">Álvaro Arbeloa</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1983-01-17</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-09-25</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Pedro_Le%C3%B3n</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Pedro_Le%C3%B3n</uri></binding>
+   <binding name="label"><literal xml:lang="es">Pedro León</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1986-11-24</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-09-25</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Valmiro_Lopes_Rocha</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Valmiro_Lopes_Rocha</uri></binding>
+   <binding name="label"><literal xml:lang="es">Valdo</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1981-04-23</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-08-31</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Miguel_Palanca</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Miguel_Palanca</uri></binding>
+   <binding name="label"><literal xml:lang="es">Miguel Palanca</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1987-12-18</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-08-31</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Sergio_Canales</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Sergio_Canales</uri></binding>
+   <binding name="label"><literal xml:lang="es">Sergio Canales</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1991-02-16</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-08-31</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/%C3%81ngel_S%C3%A1nchez_Mart%C3%ADn</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/%C3%81ngel_S%C3%A1nchez_Mart%C3%ADn</uri></binding>
+   <binding name="label"><literal xml:lang="es">Ángel Sánchez Martín</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1982-01-15</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-08-31</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Rub%C3%A9n_Pulido</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Rub%C3%A9n_Pulido</uri></binding>
+   <binding name="label"><literal xml:lang="es">Rubén Martín Pulido</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1979-02-02</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-08-31</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Francisco_Pav%C3%B3n</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Francisco_Pav%C3%B3n</uri></binding>
+   <binding name="label"><literal xml:lang="es">Francisco Pavón</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1980-01-09</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-08-31</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Adri%C3%A1n_Gonz%C3%A1lez_Morales</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Adri%C3%A1n_Gonz%C3%A1lez_Morales</uri></binding>
+   <binding name="label"><literal xml:lang="es">Adrián González Morales</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1988-05-25</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-08-31</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Daniel_Cifuentes_Alfaro</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Daniel_Cifuentes_Alfaro</uri></binding>
+   <binding name="label"><literal xml:lang="es">Daniel Cifuentes Alfaro</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1980-07-13</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-08-31</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Juan_Carlos_Duque</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Juan_Carlos_Duque</uri></binding>
+   <binding name="label"><literal xml:lang="es">Juan Carlos Duque Gancedo</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1982-01-26</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-08-31</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Juanmi_Callej%C3%B3n</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Juanmi_Callej%C3%B3n</uri></binding>
+   <binding name="label"><literal xml:lang="es">Juan Miguel Callejón Bueno</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1987-02-11</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-08-19</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Kak%C3%A1</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Kak%C3%A1</uri></binding>
+   <binding name="label"><literal xml:lang="es">Kaká</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1982-04-22</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-08-07</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Rub%C3%A9n_de_la_Red</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Rub%C3%A9n_de_la_Red</uri></binding>
+   <binding name="label"><literal xml:lang="es">Rubén de la Red</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1985-06-05</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-08-01</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Julio_%C3%81lvarez</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Julio_%C3%81lvarez</uri></binding>
+   <binding name="label"><literal xml:lang="es">Julio Álvarez Mosquera</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1981-05-01</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-08-01</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Ra%C3%BAl_Bravo</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Ra%C3%BAl_Bravo</uri></binding>
+   <binding name="label"><literal xml:lang="es">Raúl Bravo</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1981-04-14</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-07-31</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Antonio_Ad%C3%A1n</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Antonio_Ad%C3%A1n</uri></binding>
+   <binding name="label"><literal xml:lang="es">Antonio Adán</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1987-05-13</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-07-31</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Manuel_Herrera_Yag%C3%BCe</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Manuel_Herrera_Yag%C3%BCe</uri></binding>
+   <binding name="label"><literal xml:lang="es">Manuel Herrera Yagüe</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1981-09-29</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-07-31</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Daniel_Fragoso</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Daniel_Fragoso</uri></binding>
+   <binding name="label"><literal xml:lang="es">Dani Fragoso</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1982-03-31</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-07-01</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Francisco_David_Sousa</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Francisco_David_Sousa</uri></binding>
+   <binding name="label"><literal xml:lang="es">Francisco Sousa</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1980-02-03</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-06-20</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Javier_Portillo</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Javier_Portillo</uri></binding>
+   <binding name="label"><literal xml:lang="es">Javier García Portillo</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1982-03-30</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-06-20</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Diego_Le%C3%B3n</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Diego_Le%C3%B3n</uri></binding>
+   <binding name="label"><literal xml:lang="es">Diego León</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1984-01-16</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-06-20</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/David_Aganzo</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/David_Aganzo</uri></binding>
+   <binding name="label"><literal xml:lang="es">David Aganzo</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1981-01-10</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-06-20</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Borja_Fern%C3%A1ndez</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Borja_Fern%C3%A1ndez</uri></binding>
+   <binding name="label"><literal xml:lang="es">Borja Fernández</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1981-01-14</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-05-22</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Miguel_%C3%81ngel_Nieto</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Miguel_%C3%81ngel_Nieto</uri></binding>
+   <binding name="label"><literal xml:lang="es">Miguel Ángel Nieto de la Calle</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1986-01-12</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-05-18</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Laureano_Sanabria_Ruiz</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Laureano_Sanabria_Ruiz</uri></binding>
+   <binding name="label"><literal xml:lang="es">Laureano Sanabria Ruiz</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1985-03-22</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-05-18</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Enrique_Corrales</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Enrique_Corrales</uri></binding>
+   <binding name="label"><literal xml:lang="es">Enrique Corrales</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1982-03-01</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-05-16</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Fernando_Gago</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Fernando_Gago</uri></binding>
+   <binding name="label"><literal xml:lang="es">Fernando Gago</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1986-04-10</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-05-16</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Miguel_Torres_G%C3%B3mez</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Miguel_Torres_G%C3%B3mez</uri></binding>
+   <binding name="label"><literal xml:lang="es">Miguel Torres Gómez</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1986-01-28</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-05-16</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Alberto_Lora_Ramos</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Alberto_Lora_Ramos</uri></binding>
+   <binding name="label"><literal xml:lang="es">Alberto Lora</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1987-03-25</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-05-16</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Carlos_Diogo</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Carlos_Diogo</uri></binding>
+   <binding name="label"><literal xml:lang="es">Carlos Diogo</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1983-07-18</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-05-16</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Ra%C3%BAl_Albiol</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Ra%C3%BAl_Albiol</uri></binding>
+   <binding name="label"><literal xml:lang="es">Raúl Albiol</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1985-09-04</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-05-16</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Javier_Camu%C3%B1as_Gallego</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Javier_Camu%C3%B1as_Gallego</uri></binding>
+   <binding name="label"><literal xml:lang="es">Javier Camuñas Gallego</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1980-07-17</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-05-15</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Jordi_Codina</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Jordi_Codina</uri></binding>
+   <binding name="label"><literal xml:lang="es">Jordi Codina</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1982-04-27</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-05-15</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Carlos_Aranda</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Carlos_Aranda</uri></binding>
+   <binding name="label"><literal xml:lang="es">Carlos Aranda</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1980-07-27</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-05-15</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Mahamadou_Diarra</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Mahamadou_Diarra</uri></binding>
+   <binding name="label"><literal xml:lang="es">Mahamadou Diarra</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1981-05-18</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-05-08</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Rub%C3%A9n_Gonz%C3%A1lez_Rocha</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Rub%C3%A9n_Gonz%C3%A1lez_Rocha</uri></binding>
+   <binding name="label"><literal xml:lang="es">Rubén González Rocha</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1982-01-29</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2010-04-19</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Yago_Alonso-Fueyo_Sako</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Yago_Alonso-Fueyo_Sako</uri></binding>
+   <binding name="label"><literal xml:lang="es">Yago Alonso-Fueyo Sako</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1979-08-19</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">2009-06-20</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Jos%C3%A9_Mar%C3%ADa_L%C3%B3pez_da_Silva_Sanchez</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Jos%C3%A9_Mar%C3%ADa_L%C3%B3pez_da_Silva_Sanchez</uri></binding>
+   <binding name="label"><literal xml:lang="es">José María López de Silva Sánchez</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1983-02-01</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">--10-21</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/C%C3%A9sar_Navas</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/C%C3%A9sar_Navas</uri></binding>
+   <binding name="label"><literal xml:lang="es">César Navas</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1980-02-14</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">--10-03</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Lassana_Diarra</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Lassana_Diarra</uri></binding>
+   <binding name="label"><literal xml:lang="es">Lassana Diarra</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1985-03-10</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">--10-03</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Sami_Khedira</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Sami_Khedira</uri></binding>
+   <binding name="label"><literal xml:lang="es">Sami Khedira</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1987-04-04</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">--10-03</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Cristiano_Ronaldo</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Cristiano_Ronaldo</uri></binding>
+   <binding name="label"><literal xml:lang="es">Cristiano Ronaldo</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1985-02-05</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">--10-03</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Karim_Benzema</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Karim_Benzema</uri></binding>
+   <binding name="label"><literal xml:lang="es">Karim Benzema</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1987-12-19</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">--09-25</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Borja_P%C3%A9rez</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Borja_P%C3%A9rez</uri></binding>
+   <binding name="label"><literal xml:lang="es">Francisco de Borja Pérez-Peñas Díaz-Mauriño</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1982-04-01</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">--09-01</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Juan_Quero</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Juan_Quero</uri></binding>
+   <binding name="label"><literal xml:lang="es">Juan Quero</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1984-10-17</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">--08-31</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Antonio_N%C3%BA%C3%B1ez</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Antonio_N%C3%BA%C3%B1ez</uri></binding>
+   <binding name="label"><literal xml:lang="es">Antonio Núñez</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1979-01-15</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">--08-20</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Jos%C3%A9_Luis_Cabrera_Cava</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Jos%C3%A9_Luis_Cabrera_Cava</uri></binding>
+   <binding name="label"><literal xml:lang="es">José Luis Cabrera Cava</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1982-05-10</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">--06-21</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Roberto_Garc%C3%ADa_Cabello</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Roberto_Garc%C3%ADa_Cabello</uri></binding>
+   <binding name="label"><literal xml:lang="es">Roberto García Cabello</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1980-02-04</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">--06-21</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Manuel_Pav%C3%B3n</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Manuel_Pav%C3%B3n</uri></binding>
+   <binding name="label"><literal xml:lang="es">Manuel Pavón</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1984-02-27</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">--06-21</literal></binding>
+  </result>
+  <result>
+   <binding name="player"><uri>http://dbpedia.org/resource/Rafael_Garc%C3%ADa_Garc%C3%ADa</uri></binding>
+   <binding name="page"><uri>http://en.wikipedia.org/wiki/Rafael_Garc%C3%ADa_Garc%C3%ADa</uri></binding>
+   <binding name="label"><literal xml:lang="es">Rafael García García</literal></binding>
+   <binding name="birthDate"><literal datatype="http://www.w3.org/2001/XMLSchema#date">1986-01-14</literal></binding>
+   <binding name="pcupdate"><literal datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">--06-21</literal></binding>
+  </result>
+ </results>
+</sparql>
