@@ -23,6 +23,12 @@ class WCC {
   protected $cache_lifetime = false;
 
   /**
+   * Fallback to cache if it exists and live data can't be fetched.
+   * @var bool
+   */
+  protected $cache_fallback = false;
+
+  /**
    * Cache object
    * @var object
    */
@@ -38,12 +44,17 @@ class WCC {
       $this->cache_lifetime = $opts['cache_lifetime'];
     if (isset($opts['fs_cache_root_path']))
       $this->fs_cache_root_path = $opts['fs_cache_root_path'];
+    if (isset($opts['cache_fallback']))
+      $this->cache_fallback = $opts['cache_fallback'];
     $this->cache = new FSCache($this->fs_cache_root_path);
     $this->http = new HTTP();
   }
 
   /**
-   * Requests data from Web or tries to load from cache if $cache_lifetime is an integer value
+   * Requests data from Web or tries to load from cache if $cache_lifetime is 
+   * an integer value. If cache_fallback is set to true, date from cache will
+   * be returned if it exists and live data could not be fetched.
+   * 
    * @param string $url Full URL or base URL when params is set to add a query string
    * @param array $params Associative array of URL parameters and values
    * @param int | false $cache_lifetime Cache lifetime in seconds
@@ -51,27 +62,38 @@ class WCC {
    */
   public function request($url, $params = array(), $cache_lifetime = false) {
     $this->url = $this->getRequestURL($url, $params);
+
+    $get_from_cache = $response = $cache_exists = false;
+
     // determine wether to try to load data from cache
-    $get_from_cache = $response = false;
     if (false === $cache_lifetime)
       $cache_lifetime = $this->cache_lifetime;
     if (false !== $cache_lifetime)
       $get_from_cache = true;
+
     // try to load from cache
     if ($get_from_cache) {
       $id = $this->cache->getIDFromURL($this->url);
       $response = $this->cache->get($id, $cache_lifetime);
     }
+
     // load from Web
     if (!$get_from_cache || !$response) {
       $response = $this->http->get($this->url);
     }
+
+    // try to fallback to cache if set and on response
+    if ($this->cache_fallback && !$response ) {
+      $response = $this->cache->get($id, 0);
+    }
+
     // cache data if data exists and caching is requested
     if ($response && $get_from_cache) {
       if (!isset($id))
         $id = $this->cache->getIDFromURL($this->url);
       $this->cache->set($id, $response);
     }
+
     return $response;
   }
 
