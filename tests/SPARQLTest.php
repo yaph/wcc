@@ -1,6 +1,4 @@
 <?php
-require_once 'PHPUnit/Framework.php';
-
 require_once 'bootstrap.php';
 
 /**
@@ -40,7 +38,7 @@ class SPARQLTest extends PHPUnit_Framework_TestCase
      */
     public function testGetParsedResponse()
     {
-        $this->assertType('array', $this->response);
+        $this->assertTrue(is_array($this->response));
     }
     
     /**
