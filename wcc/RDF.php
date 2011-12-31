@@ -26,4 +26,18 @@ class RDF extends WCC {
       $this->response_data['items'][] = $item;
     }
   }
+
+  public function getResource($rdf) {
+    $reader = new XMLReader();
+    $reader->xml($rdf);
+    #    var_dump($rdf);
+    while ($reader->read()) {
+      $domnode = $reader->expand();
+      if ($domnode->hasAttributes()) {
+        foreach ($domnode->attributes as $attr)
+        var_dump($attr->name, $attr->value);
+      }
+      var_dump($domnode->nodeName, $domnode->nodeValue);
+    }
+  }
 }
