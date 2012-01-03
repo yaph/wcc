@@ -12,6 +12,11 @@ class DBpediaResource extends WCC {
   );
 
   /**
+   * In some cases the only language that is set is "en"
+   */
+  private $default_lang = 'en';
+  
+  /**
    * An associative array of ISO 2 letter language codes
    * @var array
    */
@@ -39,11 +44,18 @@ class DBpediaResource extends WCC {
           // for non empty nodes use node name as index key, value of 1st 
           // attribute (i.e. lang) as subkey and node value as index value
           elseif ($node->hasAttributes()) {
-            $lang = $node->attributes->item(0)->value;
-            $index[$about][$name][$lang][] = $node->nodeValue;
-            // add to language array
-            if (!isset($this->languages[$lang])) {
-              $this->languages[$lang] = $lang;
+            $attr = $node->attributes->item(0);
+            if ('lang' == $attr->name) {
+              $lang = $attr->value;
+              $index[$about][$name][$lang][] = $node->nodeValue;
+              // add to language array
+              if (!isset($this->languages[$lang])) {
+                $this->languages[$lang] = $lang;
+              }
+            }
+            // likely a data type that is omitted for the time being
+            else {
+              $index[$about][$name][] = $node->nodeValue;
             }
           }
         }
@@ -52,7 +64,14 @@ class DBpediaResource extends WCC {
     return $index;
   }
 
-  public function getFlatIndexByKeyAndLang(array $index, $key, $lang) {
+  /**
+   * Return array at key with language nodes and given array of indexes flattened
+   * @param array $index
+   * @param array $flatten
+   * @param string $key
+   * @param string $lang
+   */
+  public function getFlatIndexByKeyAndLang(array $index, array $flatten, $key, $lang) {
     if (!is_array($index) || !isset($index[$key])) {
       return FALSE;
     }
@@ -61,9 +80,17 @@ class DBpediaResource extends WCC {
     foreach ($subindex as $idx => $value) {
       if (is_array($value)) {
         if (isset($value[$lang])) {
-          $value = $value[$lang];
+          $flat[$idx] = current(array_unique($value[$lang]));
         }
-        $flat[$idx] = $this->getFlatArray($value);
+        elseif (isset($value[$this->default_lang])) {
+          $flat[$idx] = current(array_unique($value[$this->default_lang]));
+        }
+        elseif (in_array($idx, $flatten)) {
+          $flat[$idx] = current(array_unique($value));
+        }
+        else {
+          $flat[$idx] = $value;
+        }
       }
     }
     return $flat;
@@ -71,21 +98,5 @@ class DBpediaResource extends WCC {
 
   public function getLanguages() {
     return $this->languages;
-  }
-
-  /**
-   * Flatten array with one unique item to value of item.
-   * @param array $array
-   */
-  private function getFlatArray(array $array) {
-    $array = array_unique($array);
-    $ret = NULL;
-    if (1 == count($array)) {
-      $ret = current($array);
-    }
-    else {
-      $ret = $array;
-    }
-    return $ret;
   }
 }
