@@ -257,11 +257,11 @@ class FSCache implements URLCache {
   public function getIDFromURL($url) {
     $dir = $this->root_dir;
     $parts = parse_url($url);
-    if (isset($parts['host']) && isset($parts['path'])) {
-      $subdir = $parts['host'] . $parts['path'];
-      $dir .= '/' . $subdir;
+    if (isset($parts['host'])) {
+      $dir .= '/' . $parts['host'];
     }
-    $id = $dir . '/' . md5($url);
+    $urlid = md5($url);
+    $id = $dir . '/' . substr($urlid, 0, 2) . '/' . $urlid;
     return $id;
   }
 }
