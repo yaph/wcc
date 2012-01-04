@@ -3,14 +3,29 @@ class YouTube extends WCC {
 
   private $response_data;
 
+  private $sortby;
+
   public function __construct(){}
 
-  public function getParsedResponse($xml) {
+  /**
+   * Get YouTube API response as array, if order_by is specified result array
+   * will be ordered accordingly
+   * @param string $xml
+   * @param string|bool $sortby
+   */
+  public function getParsedResponse($xml, $sortby = false) {
     libxml_use_internal_errors(true);
     $sxml = simplexml_load_string($xml);
     $errors = libxml_get_errors();
     if (empty($errors)) {
       $this->getItems($sxml);
+      if ($this->sortby = $sortby) {
+        $items = $this->response_data['items'];
+        if ($items) {
+          usort($items, array($this, 'sortByFieldDesc'));
+          $this->response_data['items'] = $items;
+        }
+      }
       return $this->response_data;
     }
     return false;
@@ -77,5 +92,20 @@ class YouTube extends WCC {
       'height' => $this->getAttrVal($v->attributes(), 'height'),
       'width' => $this->getAttrVal($v->attributes(), 'width')
     );
+  }
+
+  /**
+   * Sort by sortby property in descending order, currently only used for 
+   * published field
+   * @param array $a
+   * @param array $b
+   * @return number
+   */
+  private function sortByFieldDesc($a, $b) {
+    $field = $this->sortby;
+    if ($a[$field] == $b[$field]) {
+      return 0;
+    }
+    return ($a[$field] > $b[$field]) ? -1 : 1;
   }
 }
