@@ -2,7 +2,7 @@
 /**
  * A class for parsing DBpediaresources.
  */
-class DBpediaResource extends WCC {
+class DBpediaResource {
 
   private $dom;
 
@@ -33,7 +33,7 @@ class DBpediaResource extends WCC {
       $about = $rdfdesc->getAttributeNs($this->xmlns['rdf'], 'about');
       if ($rdfdesc->hasChildNodes()) {
         foreach ($rdfdesc->childNodes as $node) {
-          $name = $node->localName;
+          $name = $node->nodeName;
           // for empty nodes use node name as index key and 1st attribute value
           // as index value
           if (!$node->nodeValue) {
