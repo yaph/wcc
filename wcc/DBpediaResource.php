@@ -4,18 +4,43 @@
  */
 class DBpediaResource {
 
+  const RDF_RESOURCE = 'http://dbpedia.org/resource/';
+
+  const DEFAULT_LANG = 'en';
+
+  /**
+   * DOMDocument instance
+   * @var DOMDocument
+   */
   private $dom;
 
+  /**
+   * Namespace array
+   * @var array
+   */
   private $xmlns = array(
     'rdf' => 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
     'rdfs' => 'http://www.w3.org/2000/01/rdf-schema#'
   );
 
   /**
-   * In some cases the only language that is set is "en"
+   * Language
+   * @var string
    */
-  private $default_lang = 'en';
-  
+  private $lang = '';
+
+  /**
+   * Resource ID
+   * @var string
+   */
+  private $id = '';
+
+  /**
+  * Resource URI
+  * @var string
+  */
+  private $uri = '';
+
   /**
    * An associative array of ISO 2 letter language codes
    * @var array
@@ -26,7 +51,9 @@ class DBpediaResource {
     $this->dom = new DOMDocument();
   }
 
-  public function getIndex($rdf) {
+  public function getIndex($rdf, $id, $lang = self::DEFAULT_LANG) {
+    $this->lang = $lang;
+    $this->uri = self::RDF_RESOURCE . urlencode($id);
     $doc = $this->dom->loadXML($rdf);
     $rdfdescs = $this->dom->getElementsByTagNameNs($this->xmlns['rdf'], 'Description');
     foreach ($rdfdescs as $rdfdesc) {
@@ -65,7 +92,39 @@ class DBpediaResource {
   }
 
   /**
+  * Return array for $resource_uri with language nodes reduced to given or
+  * default language
+  * @param array $index
+  */
+  public function getDataFromIndex(array $index) {
+    if (!is_array($index) || !isset($index[$this->uri])) {
+      return FALSE;
+    }
+    $data = array();
+    $subindex = $index[$this->uri];
+    foreach ($subindex as $idx => $value) {
+      if (is_array($value)) {
+        if (isset($value[$this->lang])) {
+          $data[$idx] = array_unique($value[$this->lang]);
+        }
+        // In some cases i.e. fullname the only language that is set is en
+        elseif (isset($value[self::DEFAULT_LANG])) {
+          $data[$idx] = array_unique($value[self::DEFAULT_LANG]);
+        }
+        elseif (in_array($idx, $data)) {
+          $data[$idx] = array_unique($value);
+        }
+        else {
+          $data[$idx] = $value;
+        }
+      }
+    }
+    return $data;
+  }
+
+  /**
    * Return array at key with language nodes and given array of indexes flattened
+   * @deprecated
    * @param array $index
    * @param array $flatten
    * @param string $key
