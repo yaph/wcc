@@ -9,12 +9,6 @@ class DBpediaResource {
   const DEFAULT_LANG = 'en';
 
   /**
-   * DOMDocument instance
-   * @var DOMDocument
-   */
-  private $dom;
-
-  /**
    * Namespace array
    * @var array
    */
@@ -24,16 +18,16 @@ class DBpediaResource {
   );
 
   /**
+   * DOMDocument instance
+   * @var DOMDocument
+   */
+  private $dom;
+
+  /**
    * Language
    * @var string
    */
   private $lang = '';
-
-  /**
-   * Resource ID
-   * @var string
-   */
-  private $id = '';
 
   /**
   * Resource URI
@@ -51,6 +45,12 @@ class DBpediaResource {
     $this->dom = new DOMDocument();
   }
 
+  /**
+   * Get an associative array of RDF objects keyed by predicates.
+   * @param string $rdf
+   * @param string $id
+   * @param string $lang
+   */
   public function getIndex($rdf, $id, $lang = self::DEFAULT_LANG) {
     $this->lang = $lang;
     $this->uri = self::RDF_RESOURCE . urlencode($id);
