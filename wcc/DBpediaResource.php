@@ -122,39 +122,6 @@ class DBpediaResource {
     return $data;
   }
 
-  /**
-   * Return array at key with language nodes and given array of indexes flattened
-   * @deprecated
-   * @param array $index
-   * @param array $flatten
-   * @param string $key
-   * @param string $lang
-   */
-  public function getFlatIndexByKeyAndLang(array $index, array $flatten, $key, $lang) {
-    if (!is_array($index) || !isset($index[$key])) {
-      return FALSE;
-    }
-    $flat = array();
-    $subindex = $index[$key];
-    foreach ($subindex as $idx => $value) {
-      if (is_array($value)) {
-        if (isset($value[$lang])) {
-          $flat[$idx] = current(array_unique($value[$lang]));
-        }
-        elseif (isset($value[$this->default_lang])) {
-          $flat[$idx] = current(array_unique($value[$this->default_lang]));
-        }
-        elseif (in_array($idx, $flatten)) {
-          $flat[$idx] = current(array_unique($value));
-        }
-        else {
-          $flat[$idx] = $value;
-        }
-      }
-    }
-    return $flat;
-  }
-
   public function getLanguages() {
     return $this->languages;
   }
