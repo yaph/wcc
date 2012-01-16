@@ -46,7 +46,9 @@ class WCC {
       $this->fs_cache_root_path = $opts['fs_cache_root_path'];
     if (isset($opts['cache_fallback']))
       $this->cache_fallback = $opts['cache_fallback'];
-    $this->cache = new FSCache($this->fs_cache_root_path);
+    if(!(isset($opts['cache_compress']) && $level = (int) $opts['cache_compress']))
+      $level = 0;
+    $this->cache = new FSCache($this->fs_cache_root_path, $level);
     $this->http = new HTTP();
   }
 
@@ -203,13 +205,19 @@ class FSCache implements URLCache {
   private $root_dir = '/tmp';
 
   /**
+  * Compress cache data using ZLIB functions with compression level.
+  * @var int
+  */
+  protected $cache_compress = 0;
+
+  /**
    * Create cache object
    * @param string $root_dir Full file system path of cache dir
    * @return void
    */
-  public function __construct($root_dir = '') {
-    if ($root_dir)
-      $this->root_dir = $root_dir;
+  public function __construct($root_dir, $cache_compress) {
+    $this->root_dir = $root_dir;
+    $this->cache_compress = $cache_compress;
   }
 
   /**
@@ -220,8 +228,12 @@ class FSCache implements URLCache {
    */
   public function get($id, $lifetime) {
     if (file_exists($id)) {
-      if ((0 === $lifetime) || (filemtime($id) + $lifetime > time()) )
+      if ((0 === $lifetime) || (filemtime($id) + $lifetime > time()) ) {
+        if ($this->cache_compress) {
+          return implode(gzfile($id));
+        }
         return file_get_contents($id);
+      }
     }
     return false;
   }
@@ -241,9 +253,15 @@ class FSCache implements URLCache {
         mkdir($dir, self::UMASK, true);
       touch($id);
     }
-    if(file_put_contents($id, $data, LOCK_EX)) {
-      $success = chmod($id, self::UMASK);
+    if ($this->cache_compress) {
+      $gz = gzopen($id, 'w' . $this->cache_compress);
+      gzwrite($gz, $data);
+      gzclose($gz);
     }
+    else{
+      file_put_contents($id, $data, LOCK_EX);
+    }
+    $success = chmod($id, self::UMASK);
     umask($old);
     return $success;
   }
