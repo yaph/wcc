@@ -39,6 +39,7 @@ class YouTube extends WCC {
       foreach ($media->group->thumbnail as $t) {
         $this->setItemThumbnail($item, 'thumbnail', $t);
       }
+      $item['pubDate'] = date('r', strtotime($item['published']));
       $item['description'] = (string) $media->group->description;
       $this->response_data['items'][] = $item;
     }
