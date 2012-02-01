@@ -5,7 +5,18 @@ class YouTube extends WCC {
 
   private $sortby;
 
-  public function __construct(){}
+  public function __construct() {
+    libxml_use_internal_errors(true);
+  }
+
+  public function getParsedVideoResponse($xml) {
+    $sxml = simplexml_load_string($xml);
+    $errors = libxml_get_errors();
+    if (empty($errors)) {
+      return $this->getItemData($sxml);
+    }
+    return false;
+  }
 
   /**
    * Get YouTube API response as array, if order_by is specified result array
@@ -13,8 +24,7 @@ class YouTube extends WCC {
    * @param string $xml
    * @param string|bool $sortby
    */
-  public function getParsedResponse($xml, $sortby = false) {
-    libxml_use_internal_errors(true);
+  public function getParsedSearchResponse($xml, $sortby = false) {
     $sxml = simplexml_load_string($xml);
     $errors = libxml_get_errors();
     if (empty($errors)) {
@@ -34,14 +44,7 @@ class YouTube extends WCC {
   private function getItems($sxml) {
     $items = $sxml->entry;
     foreach ($items as $i) {
-      $item = $this->getItemData($i);
-      $media = $i->children('http://search.yahoo.com/mrss/');
-      foreach ($media->group->thumbnail as $t) {
-        $this->setItemThumbnail($item, 'thumbnail', $t);
-      }
-      $item['pubDate'] = date('r', strtotime($item['published']));
-      $item['description'] = (string) $media->group->description;
-      $this->response_data['items'][] = $item;
+      $this->response_data['items'][] = $this->getItemData($i);
     }
   }
 
@@ -56,6 +59,12 @@ class YouTube extends WCC {
         $item[$k] = $v;
       }
     }
+    $media = $i->children('http://search.yahoo.com/mrss/');
+    foreach ($media->group->thumbnail as $t) {
+      $this->setItemThumbnail($item, 'thumbnail', $t);
+    }
+    $item['pubDate'] = date('r', strtotime($item['published']));
+    $item['description'] = (string) $media->group->description;
     return $item;
   }
 

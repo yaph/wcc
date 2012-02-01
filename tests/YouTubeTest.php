@@ -20,7 +20,7 @@ class YouTubeTest extends PHPUnit_Framework_TestCase
     {
         $this->object = new YouTube;
         $this->xml = file_get_contents(PATH_TEST_DATA . '/youtube.xml');
-        $this->response = $this->object->getParsedResponse($this->xml);
+        $this->response = $this->object->getParsedSearchResponse($this->xml);
     }
 
     /**

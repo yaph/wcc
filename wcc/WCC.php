@@ -63,9 +63,9 @@ class WCC {
    * @return mixed $response Data loaded from cache or Web
    */
   public function request($url, $params = array(), $cache_lifetime = false) {
-    $this->url = $this->getRequestURL($url, $params);
-
     $get_from_cache = $response = $cache_exists = false;
+
+    $this->url = $this->getRequestURL($url, $params);
 
     // determine wether to try to load data from cache
     if (false === $cache_lifetime)
