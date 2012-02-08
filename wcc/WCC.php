@@ -141,6 +141,8 @@ class WCC {
   }
 }
 
+class HTTPException extends Exception {}
+
 /**
  * A class for performing HTTP requests
  */
@@ -164,7 +166,7 @@ class HTTP {
     $this->status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
     if (200 > $this->status || 300 <= $this->status)
-      return false;
+      throw new HTTPException('Content could not be fetched', $this->status);
     return $body;
   }
 
