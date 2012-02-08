@@ -162,11 +162,14 @@ class HTTP {
     $ch = curl_init(); 
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
     $body = curl_exec($ch);
     $this->status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
-    if (200 > $this->status || 300 <= $this->status)
-      throw new HTTPException('Content could not be fetched', $this->status);
+    if (200 > $this->status || 400 <= $this->status) {
+      $msg = sprintf('URL %s returned status %s', $url, $this->status);
+      throw new HTTPException($msg, $this->status);
+    }
     return $body;
   }
 
