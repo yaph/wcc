@@ -127,6 +127,15 @@ class WCC {
   }
 
   /**
+  * Returns collected HTTP errors
+  * @param void
+  * @return array $errors
+  */
+  public function getHTTPErrors() {
+    return $this->http->getErrors();
+  }
+
+  /**
    * Returns full URL to request, params are added when set
    * @param string $url Full URL or base URL when params is set to add a query string
    * @param array $params Associative array of URL parameters and values
@@ -141,8 +150,6 @@ class WCC {
   }
 }
 
-class HTTPException extends Exception {}
-
 /**
  * A class for performing HTTP requests
  */
@@ -153,13 +160,15 @@ class HTTP {
    */
   private $status;
 
+  private $errors = array();
+
   /**
    * Performs a get HTTP request and returns the content received or false
    * @param string $url
    * @return string $body
    */
   public function get($url) {
-    $ch = curl_init(); 
+    $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
@@ -167,10 +176,14 @@ class HTTP {
     $this->status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
     if (200 > $this->status || 400 <= $this->status) {
-      $msg = sprintf('URL %s returned status %s', $url, $this->status);
-      throw new HTTPException($msg, $this->status);
+      array_push($this->errors, sprintf('URL %s returned status %s', $url, $this->status));
+      return false;
     }
     return $body;
+  }
+
+  public function getErrors() {
+    return $this->errors;
   }
 
   /**
