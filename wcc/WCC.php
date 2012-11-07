@@ -59,7 +59,9 @@ class WCC {
    * 
    * @param string $url Full URL or base URL when params is set to add a query string
    * @param array $params Associative array of URL parameters and values
-   * @param int | false $cache_lifetime Cache lifetime in seconds
+   * @param int | false $cache_lifetime Cache lifetime in seconds. Call
+   * with false or without argument to use default client cache_lifetime, call 
+   * with null to turn off caching.
    * @return mixed $response Data loaded from cache or Web
    */
   public function request($url, $params = array(), $cache_lifetime = false) {
@@ -67,10 +69,10 @@ class WCC {
 
     $this->url = $this->getRequestURL($url, $params);
 
-    // determine wether to try to load data from cache
-    if (false === $cache_lifetime)
+    // if no specific cache_lifetime is given use default if set
+    if (false === $cache_lifetime && $this->cache_lifetime >= 0)
       $cache_lifetime = $this->cache_lifetime;
-    if (false !== $cache_lifetime)
+    if (!is_null($cache_lifetime) && $cache_lifetime >= 0)
       $get_from_cache = true;
 
     // try to load from cache
